@@ -1,6 +1,7 @@
 import { createRoot } from 'react-dom/client'
+import SignUp from './components/SignUp.jsx'
+import SignIn from './components/SignIn.jsx'
 import About from './components/About.jsx'
-import Home from './Components/Home.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { StrictMode } from 'react'
 import App from './App.jsx'
@@ -10,8 +11,12 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "/Home",
-        element: <Home />
+        path: "/Signin",
+        element: <SignIn />
+      },
+      {
+        path: "/Signup",
+        element: <SignUp />
       },
       {
         path: "/About",
