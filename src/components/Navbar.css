@@ -25,12 +25,18 @@ nav {
   gap: 4vw;
 }
 .navlinks {
-  font-size: 2vw;
+  font-size: 1.8vw;
   text-decoration: none;
   color: black;
 }
 .ri-menu-3-fill {
   display: none;
+}
+.onnavlinkclick {
+  background-color: black;
+  padding: 0.5vw 1.5vw;
+  color: white;
+  border-radius: 10px;
 }
 @media (max-width: 600px) {
   nav h3 {
