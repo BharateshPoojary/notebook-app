@@ -19,20 +19,24 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 0 3vw;
+  border-bottom: 3px solid black;
 }
 .navitems {
   display: flex;
-  gap: 4vw;
+  gap: 2.5vw;
 }
 .navlinks {
   font-size: 1.8vw;
   text-decoration: none;
   color: black;
+  padding: 0.5vw 1.5vw;
 }
 .ri-menu-3-fill {
   display: none;
 }
 .onnavlinkclick {
+  font-size: 1.8vw;
+  text-decoration: none;
   background-color: black;
   padding: 0.5vw 1.5vw;
   color: white;
