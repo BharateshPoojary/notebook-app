@@ -7,24 +7,28 @@
 .homecontainer {
   height: calc(100%-100px);
   width: 100%;
-  padding: 2vw 2vw;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+  padding: 1vw 15vw;
 }
 .homecontainer h2 {
   font-size: 2vw;
 }
 label {
+  margin-top: 1vw;
   font-size: 1.6vw;
 }
 input {
   height: 5vh;
-  width: 27%;
+  width: 85%;
   font-size: 1.4vw;
   margin-bottom: 1.5vw;
 }
 
 .desc {
   height: 10vh;
-  width: 27%;
+  width: 85%;
   font-size: 1.3vw;
 }
 .submitbtn {
