@@ -8,9 +8,9 @@ const Navbar = () => {
     // }, []);
 
     const location = useLocation();//Returns the current location object, which represents the current URL in web browsers.
-    useEffect(() => {
-        console.log(location.pathname);
-    }, [location])
+    // useEffect(() => {
+    //     console.log(location.pathname);
+    // }, [location])
 
     return (
         <div className='container'>

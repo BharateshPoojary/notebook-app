@@ -7,7 +7,7 @@
 .homecontainer {
   height: calc(100%-100px);
   width: 100%;
-  padding: 1vw 13vw;
+  padding: 1vw 10vw;
 }
 .homecontainer h2 {
   font-size: 2vw;

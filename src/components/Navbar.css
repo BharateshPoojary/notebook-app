@@ -23,10 +23,11 @@ nav {
 }
 .navitems {
   display: flex;
-  gap: 2.5vw;
+  align-items: center;
+  gap: 4vw;
 }
 .navlinks {
-  font-size: 1.8vw;
+  font-size: 1.6vw;
   text-decoration: none;
   color: black;
   padding: 0.5vw 1.5vw;
@@ -35,7 +36,7 @@ nav {
   display: none;
 }
 .onnavlinkclick {
-  font-size: 1.8vw;
+  font-size: 1.6vw;
   text-decoration: none;
   background-color: black;
   padding: 0.5vw 1.5vw;
@@ -53,6 +54,7 @@ nav {
   .ri-menu-3-fill {
     display: block;
     font-size: 5.5vw;
+    cursor: pointer;
   }
   .onnavlinkclick {
     display: none;

@@ -14,7 +14,7 @@ const Home = () => {
                     <br />
                     <label >Enter description for note:</label>
                     <br />
-                    <textarea className="desc" required></textarea>
+                    <textarea className="desc" name='description' required></textarea>
                     <br />
                     <input className="submitbtn" type="submit" value="Add Note" />
                 </form>
