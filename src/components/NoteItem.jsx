@@ -1,22 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './Note.css'
+import noteContext from '../context/notes/NoteContext';
 const NoteItem = (props) => {
-    const { note } = props;
-    const delNote = () => {
-        return (<h1>Hi</h1>
-        )
-    }
+    const { note } = props;//Accessing a single note as props from Notes.jsx 
+    //Next accessing title and description and printing 
+    const NoteContext = useContext(noteContext);
+    const { deleteNote } = NoteContext;
     return (
         <div className='notecontainer'>
             <div className="titlecontainer">
                 <h3>{note.title}</h3>
                 <div className='editdelbtn'>
-                    <i className="ri-delete-bin-line" onClick={delNote}></i>
+                    <i className="ri-delete-bin-line" onClick={() => { deleteNote(note._id) }}></i>
                     <i className="ri-edit-2-line"></i>
                 </div>
             </div>
-            <p>{note.description} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi obcaecati quia soluta aperiam earum veniam, porro debitis quam laborum autem? Porro, voluptatibus asperiores pariatur quos totam necessitatibus similique recusandae voluptate id iusto vitae quaerat.
-            </p>
+            <p>{note.description} </p>
         </div>
     )
 }

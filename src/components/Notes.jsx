@@ -4,13 +4,12 @@ import NoteItem from './NoteItem';
 import './Note.css'
 const Notes = () => {
     const notecontext = useContext(NoteContext);
-    // console.log(notecontext);
-    const { notes, setNotes } = notecontext;
+    const { notes } = notecontext;//Accessing the notes array from NoteContext.jsx
     return (
         <div className='notescontainer'>
-            {notes.map((note) => {
+            {notes.map((note) => {//Iterating through each note and sending the note to NoteItem.jsx component 
                 return (
-                    <NoteItem key={note._id} note={note} />
+                    <NoteItem key={note._id} note={note} />// key={note._id} it is required as every child must have a unique key prop
                 )
             })}
         </div>
