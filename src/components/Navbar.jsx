@@ -1,21 +1,19 @@
 import React, { useEffect } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import './Navbar.css'
-// import NoteContext from '../context/notes/NoteContext'
 const Navbar = () => {
     // const a = useContext(NoteContext);//useContext is a function for using the Context API here we are sending NoteContext which is an object of the createContext() as parameter to  this function
     // useEffect(() => {
     //     a.update();//We are updating a particular state by accessing the update function using useContext hook
     // }, []);
-    const location = useLocation();//Returns the current location object, which represents the current URL in web browsers.
 
+    const location = useLocation();//Returns the current location object, which represents the current URL in web browsers.
     useEffect(() => {
         console.log(location.pathname);
     }, [location])
 
     return (
         <div className='container'>
-
             <nav>
                 {/* <h2>hi {a.state.name} and {a.state.class}</h2>* 'a'  holds the context value which is sent in our case it is state object it can be accessed */}
                 <h3>Bharat Note </h3>

@@ -1,4 +1,4 @@
-// import NoteContext from "./NoteContext";
+import NoteContext from "./NoteContext";
 import React, { useState } from 'react'//React is imported because you are using JSX (the HTML-like syntax) and some React functionality.
 
 const NoteState = (props) => {//getting the props sent to it
@@ -44,11 +44,11 @@ const NoteState = (props) => {//getting the props sent to it
             "__v": 0
         }
     ]
-    const [note, setNotes] = useState(objofnote);
+    const [notes, setNotes] = useState(objofnote);
 
 
     return (
-        <NoteContext.Provider value={{ note, setNotes }}>{/**here we are sending  object of state as prop to the NoteContext so that it could be accessed by all components which are wrapped inside NoteState component   */}
+        <NoteContext.Provider value={{ notes, setNotes }}>{/**here we are sending  object of state as prop to the NoteContext so that it could be accessed by all components which are wrapped inside NoteState component   */}
             {props.children}{/**here props.children means components which are wrapped inside NoteState component are indirectly passed as prop to the NoteState Component */}
         </NoteContext.Provider>
     )

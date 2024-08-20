@@ -54,4 +54,7 @@ nav {
     display: block;
     font-size: 5.5vw;
   }
+  .onnavlinkclick {
+    display: none;
+  }
 }
