@@ -1,0 +1,9 @@
+.notescontainer {
+  display: grid;
+  grid-template-columns: 33.4% 33.4% 33.4%;
+}
+.notecontainer {
+  margin: 0.5vw 0.5vw;
+  border: 2px solid #dadada;
+  padding: 0.5vw 1vw;
+}

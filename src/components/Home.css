@@ -7,10 +7,7 @@
 .homecontainer {
   height: calc(100%-100px);
   width: 100%;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
-  padding: 1vw 15vw;
+  padding: 1vw 13vw;
 }
 .homecontainer h2 {
   font-size: 2vw;
