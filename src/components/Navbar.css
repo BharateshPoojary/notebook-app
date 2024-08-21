@@ -19,7 +19,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 0 3vw;
-  border-bottom: 3px solid black;
+  /* border-bottom: 3px solid black; */
 }
 .navitems {
   display: flex;

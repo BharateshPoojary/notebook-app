@@ -12,7 +12,7 @@ const NoteItem = (props) => {
                 <h3>{note.title}</h3>
                 <div className='editdelbtn'>
                     <i className="ri-delete-bin-line" onClick={() => { deleteNote(note._id) }}></i>
-                    <i className="ri-edit-2-line"></i>
+                    {/* <i className="ri-edit-2-line"></i> */}
                 </div>
             </div>
             <p>{note.description} </p>
