@@ -9,7 +9,7 @@ const Home = () => {
     const { addNote } = NoteContext;//accessing the addnote function from NoteContext
     const handleChange = (e) => {//e object includes the specific information related to input and textarea tag
         setNote({ ...note, [e.target.name]: e.target.value });
-        //The spread operator ... is used to create a copy of the current note state. This ensures that all existing properties in the note object are preserved.
+        //(NOT USED HERE)The spread operator ... is used to create a copy of the current note state. This ensures that all existing properties in the note object are preserved.
         // ([e.target.name]): The square brackets [] allow you to dynamically define the property name based on the value of e.target.name. This corresponds to the name attribute of the input element that triggered the handleChange event
         // ([e.target.name]: e.target.value): This part updates the specific property of the note object with the new value from the input field. If e.target.name is "title", it updates note.title with the value e.target.value. If e.target.name is "description", it updates note.description.
     }
@@ -23,7 +23,7 @@ const Home = () => {
         <div>
             <div className="homecontainer">
                 <h2>Add a Note</h2>
-                <form  >
+                <form>
                     <label htmlFor="title">Enter title for note:</label>
                     <br />
                     <input type="text" name="title" onChange={handleChange} required />
