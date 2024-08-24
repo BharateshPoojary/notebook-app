@@ -19,9 +19,9 @@ const Navbar = () => {
                 <h3>Bharat Note </h3>
                 <div className='navitems'>
                     <NavLink className={` ${location.pathname === "/" ? 'onnavlinkclick' : 'navlinks'}`} to='/'>Home</NavLink>
-                    {/* <NavLink className={` ${location.pathname === "/Signup" ? 'onnavlinkclick' : 'navlinks'}`} to='/Signup'>Signup</NavLink>
+                    <NavLink className={` ${location.pathname === "/Signup" ? 'onnavlinkclick' : 'navlinks'}`} to='/Signup'>Signup</NavLink>
                     <NavLink className={` ${location.pathname === "/Signin" ? 'onnavlinkclick' : 'navlinks'}`} to='/Signin'>Signin</NavLink>
-                    <NavLink className={` ${location.pathname === "/About" ? 'onnavlinkclick' : 'navlinks'}`} to='/About'>About</NavLink> */}
+                    <NavLink className={` ${location.pathname === "/About" ? 'onnavlinkclick' : 'navlinks'}`} to='/About'>About</NavLink>
                     <i className="ri-menu-3-fill"></i>
                 </div>
             </nav>
