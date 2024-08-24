@@ -32,6 +32,19 @@ const NoteState = (props) => {//getting the props sent to it
         const addedNote = notes.concat(jsonresponse);
         setNotes(addedNote);//Updating the state by adding the note
     }
+    // Updating a note 
+    const updateNote = async (noteId, title, description) => {
+        const updateresponse = await fetch(`${host}api/notes/updatenotes/${noteId}`, {
+            method: 'PUT',
+            headers: {
+                'auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjZiNWYxYzFhODZiNzM3NjAwM2Y1Nzc4IiwiaWF0IjoxNzIzNDIzMDI2fQ.ThFovqgtMXoKkVBSgLIfXt0JNtH83-M-2MluLZd369g',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ title, description })
+        })
+        const jsonresponse = await updateresponse.json();
+        console.log(jsonresponse);
+    }
     //Deleting a note
     const deleteNote = async (noteId) => {
         console.log(noteId);
@@ -50,7 +63,7 @@ const NoteState = (props) => {//getting the props sent to it
     }
 
     return (
-        <NoteContext.Provider value={{ notes, addNote, deleteNote, getNotes }}>{/**here we are sending  notes array ,CRUD functions  as prop to the NoteContext so that it could be accessed by all components which are wrapped inside NoteState component   */}
+        <NoteContext.Provider value={{ notes, addNote, deleteNote, getNotes, updateNote }}>{/**here we are sending  notes array ,CRUD functions  as prop to the NoteContext so that it could be accessed by all components which are wrapped inside NoteState component   */}
             {props.children}{/**here props.children means components which are wrapped inside NoteState component are indirectly passed as prop to the NoteState Component */}
         </NoteContext.Provider>
     )
