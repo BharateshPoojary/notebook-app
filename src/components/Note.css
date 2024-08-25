@@ -2,3 +2,7 @@
   display: grid;
   grid-template-columns: 33.4% 33.4% 33.4%;
 }
+.nonotemessage {
+  display: flex;
+  justify-content: center;
+}

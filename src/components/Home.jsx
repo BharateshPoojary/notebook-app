@@ -15,9 +15,8 @@ const Home = () => {
     }
     const handleClick = (e) => {
         e.preventDefault();
-        //The e.preventDefault(); method is used to stop the default action of an event from occurring.
-        /*In the context of a form submission, the default action would be for the browser to refresh the page, which would disrupt your React app’s state and user experience.By calling e.preventDefault();, you prevent this default behavior, allowing you to handle the form submission using JavaScript instead of a traditional page reload.*/
         addNote(note.title, note.description);/*Sending the new note to addnote function where it will be added to the  notes array*/
+        setNote({ title: "", description: "" });
     }
     return (
         <div>
@@ -26,14 +25,17 @@ const Home = () => {
                 <form>
                     <label htmlFor="title">Enter title for note:</label>
                     <br />
-                    <input style={{ border: '1px solid black' }} type="text" name="title" onChange={handleChange} required />
+                    <input style={{ border: '1px solid black' }} type="text" name="title" value={note.title} onChange={handleChange} required />
                     <br />
                     <label >Enter description for note:</label>
                     <br />
-                    <textarea className="desc" name='description' onChange={handleChange} required></textarea>
+                    <textarea className="desc" name='description' value={note.description} onChange={handleChange} required></textarea>
                     <br />
                     <input className="submitbtn" type="submit" value="Add Note" onClick={handleClick} />
                 </form>
+                {/* {if(note.title.length < 3 && !note.description.length < 5){
+                    
+                }} */}
                 <h2>Your Notes</h2>
                 <Notes />
             </div>

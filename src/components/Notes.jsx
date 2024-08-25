@@ -9,13 +9,20 @@ const Notes = () => {
         getNotes();
     }, [])
     return (
-        <div className='notescontainer'>
-            {notes.map((note) => {//Iterating through each note and sending the note to NoteItem.jsx component 
-                return (
-                    <NoteItem key={note._id} note={note} />// key={note._id} it is required as every child must have a unique key prop
-                )
-            })}
+        <div>
+            {
+                notes.length === 0 ? (<div className='nonotemessage'><h2 style={{ fontSize: '3vw' }}>No notes available</h2></div>) :
+                    (<div className='notescontainer'>
+                        {notes.map((note) => {//Iterating through each note and sending the note to NoteItem.jsx component 
+                            return (
+                                <NoteItem key={note._id} note={note} />
+                                // key={note._id} it is required as every child must have a unique key prop
+                            )
+                        })}
+                    </div>)
+            }
         </div>
+
     )
 }
 

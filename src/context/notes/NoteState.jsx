@@ -1,6 +1,7 @@
 import NoteContext from "./NoteContext";
 import React, { useState } from 'react'//React is imported because you are using JSX (the HTML-like syntax) and some React functionality.
-
+import { Bounce, ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const NoteState = (props) => {//getting the props sent to it
     const host = "http://localhost:5000/"
     const arrofnotes = [];
@@ -29,8 +30,20 @@ const NoteState = (props) => {//getting the props sent to it
         })
         const jsonresponse = await addresponse.json();
         console.log(jsonresponse);
-        const addedNote = notes.concat(jsonresponse);
-        setNotes(addedNote);//Updating the state by adding the note
+        if (jsonresponse.errors) {
+
+            if (jsonresponse.errors.length == 2) {
+                alert("Please enter title and description", 'error')
+            } else if (jsonresponse.errors[0].path === "title") {
+                alert(jsonresponse.errors[0].msg, 'error')
+            } else if (jsonresponse.errors[0].path === "description") {
+                alert(jsonresponse.errors[0].msg, 'error')
+            }
+        } else {
+            const addedNote = notes.concat(jsonresponse);
+            setNotes(addedNote);//Updating the state by adding the note
+            alert("Note added successfully", 'success')
+        }
     }
     // Updating a note 
     const updateNote = async (noteId, title, description) => {
@@ -44,6 +57,9 @@ const NoteState = (props) => {//getting the props sent to it
         })
         const jsonresponse = await updateresponse.json();
         console.log(jsonresponse);
+        if (jsonresponse) {
+            alert("Note updated successfully", 'success')
+        }
     }
     //Deleting a note
     const deleteNote = async (noteId) => {
@@ -56,16 +72,27 @@ const NoteState = (props) => {//getting the props sent to it
         });
         const jsonresponse = await deleteresponse.json();
         console.log(jsonresponse);
+
         const afterDeletenotearr = notes.filter((note) => {
             return note._id !== noteId
         })
         setNotes(afterDeletenotearr);
-    }
+        if (jsonresponse.success) {
+            alert("Note deleted successfully", 'success')
+        }
 
+    }
+    //Notification
+    const alert = (message, type) => {
+        toast(message, { type: type });
+    }
     return (
-        <NoteContext.Provider value={{ notes, addNote, deleteNote, getNotes, updateNote }}>{/**here we are sending  notes array ,CRUD functions  as prop to the NoteContext so that it could be accessed by all components which are wrapped inside NoteState component   */}
-            {props.children}{/**here props.children means components which are wrapped inside NoteState component are indirectly passed as prop to the NoteState Component */}
-        </NoteContext.Provider>
+        <>
+            <NoteContext.Provider value={{ notes, addNote, deleteNote, getNotes, updateNote, alert }}>{/**here we are sending  notes array ,CRUD functions  as prop to the NoteContext so that it could be accessed by all components which are wrapped inside NoteState component   */}
+                {props.children}{/**here props.children means components which are wrapped inside NoteState component are indirectly passed as prop to the NoteState Component */}
+            </NoteContext.Provider>
+            < ToastContainer position="bottom-right" theme="dark" />
+        </>
     )
 }
 
