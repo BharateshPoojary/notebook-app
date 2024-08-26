@@ -1,7 +1,8 @@
 import NoteContext from "./NoteContext";
 import React, { useState } from 'react'//React is imported because you are using JSX (the HTML-like syntax) and some React functionality.
-import { Bounce, ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './NoteState.css'
 const NoteState = (props) => {//getting the props sent to it
     const host = "http://localhost:5000/"
     const arrofnotes = [];
@@ -100,7 +101,7 @@ const NoteState = (props) => {//getting the props sent to it
             <NoteContext.Provider value={{ notes, addNote, deleteNote, getNotes, updateNote, alert }}>{/**here we are sending  notes array ,CRUD functions  as prop to the NoteContext so that it could be accessed by all components which are wrapped inside NoteState component   */}
                 {props.children}{/**here props.children means components which are wrapped inside NoteState component are indirectly passed as prop to the NoteState Component */}
             </NoteContext.Provider>
-            < ToastContainer position="bottom-right" theme="dark" />
+            < ToastContainer bodyClassName='toastBody' position="top-center" theme="dark" />
         </>
     )
 }

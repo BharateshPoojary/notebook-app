@@ -21,14 +21,8 @@ const Home = () => {
         if (jsonresponse.success) {
             localStorage.setItem('auth-token', JSON.stringify(jsonresponse.auth_token));
             navigate('/');
-        } else if (jsonresponse.error) {
-            alert(jsonresponse.error, 'error')
         } else {
-            const { errors } = jsonresponse;
-            errors.forEach(error => {
-                alert(error.msg, 'error');
-
-            });
+            alert(jsonresponse.error, 'error')
         }
 
     }
@@ -38,12 +32,12 @@ const Home = () => {
             <form className='signinform' onSubmit={handleLogin}>
                 <label className='loginlabel' htmlFor="email">Enter your email:</label>
                 <br />
-                <input className='logininput' type="email" value={email} onChange={(e) => { setEmail(e.target.value) }} />
+                <input className='logininput' type="email" value={email} onChange={(e) => { setEmail(e.target.value) }} required />
                 <br />
                 <br />
                 <label className='loginlabel' htmlFor="password">Enter password:</label>
                 <br />
-                <input className='logininput' type="password" value={password} onChange={(e) => { setPassword(e.target.value) }} />
+                <input className='logininput' type="password" value={password} onChange={(e) => { setPassword(e.target.value) }} required />
                 <br />
                 <input className='signinbtn' type="submit" value="SignIn" />
             </form>

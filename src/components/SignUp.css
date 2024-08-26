@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica";
+}
+
+.container {
+  height: calc(100%-100px);
+  width: 100%;
+}
+
+.signupform {
+  padding: 5vw;
+  margin-left: 30%;
+}
+.signupinput {
+  border: 1px solid black;
+  width: 50%;
+  height: 3vw;
+}
+
+.signuplabel {
+  font-size: 2vw;
+}
+.signupbtn {
+  margin-top: 2vw;
+  padding: 0.5vw 2vw;
+  font-size: 2vw;
+  width: 40%;
+  background-color: black;
+  color: white;
+  border-radius: 30px;
+  margin-left: 2vw;
+  cursor: pointer;
+}
