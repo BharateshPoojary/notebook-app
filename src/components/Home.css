@@ -12,11 +12,11 @@
 .homecontainer h2 {
   font-size: 2vw;
 }
-label {
+.notelabel {
   margin-top: 1vw;
   font-size: 1.6vw;
 }
-input {
+.noteinput {
   height: 5vh;
   width: 85%;
   font-size: 1.4vw;

@@ -23,19 +23,16 @@ const Home = () => {
             <div className="homecontainer">
                 <h2>Add a Note</h2>
                 <form>
-                    <label htmlFor="title">Enter title for note:</label>
+                    <label className='notelabel' htmlFor="title">Enter title for note:</label>
                     <br />
-                    <input style={{ border: '1px solid black' }} type="text" name="title" value={note.title} onChange={handleChange} required />
+                    <input className='noteinput' style={{ border: '1px solid black' }} type="text" name="title" value={note.title} onChange={handleChange} required />
                     <br />
-                    <label >Enter description for note:</label>
+                    <label className='notelabel'>Enter description for note:</label>
                     <br />
                     <textarea className="desc" name='description' value={note.description} onChange={handleChange} required></textarea>
                     <br />
                     <input className="submitbtn" type="submit" value="Add Note" onClick={handleClick} />
                 </form>
-                {/* {if(note.title.length < 3 && !note.description.length < 5){
-                    
-                }} */}
                 <h2>Your Notes</h2>
                 <Notes />
             </div>

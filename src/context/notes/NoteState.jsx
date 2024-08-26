@@ -16,7 +16,12 @@ const NoteState = (props) => {//getting the props sent to it
         })
         const jsonresponse = await getresponse.json();
         console.log(jsonresponse);
-        setNotes(jsonresponse);
+        if (jsonresponse.error) {
+            alert(jsonresponse.error, 'error')
+        } else {
+            setNotes(jsonresponse);
+        }
+
     }
     // Adding a note 
     const addNote = async (title, description) => {//addNote() function for adding the note
@@ -31,15 +36,14 @@ const NoteState = (props) => {//getting the props sent to it
         const jsonresponse = await addresponse.json();
         console.log(jsonresponse);
         if (jsonresponse.errors) {
-
-            if (jsonresponse.errors.length == 2) {
-                alert("Please enter title and description", 'error')
-            } else if (jsonresponse.errors[0].path === "title") {
-                alert(jsonresponse.errors[0].msg, 'error')
-            } else if (jsonresponse.errors[0].path === "description") {
-                alert(jsonresponse.errors[0].msg, 'error')
-            }
-        } else {
+            const { errors } = jsonresponse;
+            errors.forEach(error => {
+                alert(error.msg, 'error');
+            });
+        } else if (jsonresponse.error) {
+            alert(jsonresponse.error, 'error')
+        }
+        else {
             const addedNote = notes.concat(jsonresponse);
             setNotes(addedNote);//Updating the state by adding the note
             alert("Note added successfully", 'success')
@@ -57,8 +61,11 @@ const NoteState = (props) => {//getting the props sent to it
         })
         const jsonresponse = await updateresponse.json();
         console.log(jsonresponse);
-        if (jsonresponse) {
+        if (jsonresponse.error) {
+            alert(jsonresponse.error, 'error')
+        } else {
             alert("Note updated successfully", 'success')
+
         }
     }
     //Deleting a note
@@ -79,6 +86,8 @@ const NoteState = (props) => {//getting the props sent to it
         setNotes(afterDeletenotearr);
         if (jsonresponse.success) {
             alert("Note deleted successfully", 'success')
+        } else {
+            alert(jsonresponse.error, 'error')
         }
 
     }
