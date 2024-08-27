@@ -19,8 +19,9 @@ const Home = () => {
         const jsonresponse = await loginresponse.json();
         console.log(jsonresponse);
         if (jsonresponse.success) {
-            localStorage.setItem('auth-token', JSON.stringify(jsonresponse.auth_token));
+            localStorage.setItem('auth-token', jsonresponse.auth_token);
             navigate('/');
+            alert("Logged in  successfully", 'success');
         } else {
             alert(jsonresponse.error, 'error')
         }
