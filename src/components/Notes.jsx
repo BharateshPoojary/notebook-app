@@ -2,17 +2,16 @@ import React, { useContext, useEffect } from 'react'
 import NoteContext from '../context/notes/NoteContext'
 import NoteItem from './NoteItem';
 import './Note.css'
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 const Notes = () => {
     const navigate = useNavigate();
     const notecontext = useContext(NoteContext);
     const { notes, getNotes } = notecontext;//Accessing the notes array from NoteContext.jsx
     useEffect(() => {
         if (localStorage.getItem('auth-token')) {
-
             getNotes();
         } else {
-            navigate('/');
+            navigate('/Signin');
         }
     }, [])
     return (

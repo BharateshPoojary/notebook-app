@@ -39,6 +39,7 @@ const About = () => {
     return (
         <div>
             <div className='container'>
+                <p style={{ fontSize: '3vw' }}>Create a new Account</p>
                 <form className='signupform' onSubmit={handleSignup}>
                     <label className='signuplabel' htmlFor="name">Enter your name:</label>
                     <br />

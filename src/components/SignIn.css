@@ -5,18 +5,22 @@
   font-family: "Helvetica";
 }
 
-.container {
+.signincontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: calc(100%-100px);
   width: 100%;
+  margin-top: 20px;
 }
 
 .signinform {
-  padding: 2vw;
-  margin-left: 30%;
+  margin-top: 10px;
 }
 .logininput {
   border: 1px solid black;
-  width: 50%;
+  width: 35vw;
   height: 3vw;
 }
 
@@ -31,6 +35,6 @@
   background-color: black;
   color: white;
   border-radius: 30px;
-  margin-left: 2vw;
+  margin-left: 10vw;
   cursor: pointer;
 }

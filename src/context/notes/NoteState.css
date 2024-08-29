@@ -3,10 +3,19 @@
   border: 2px solid red;
   border-radius: 25px;
   color: black;
+  font-weight: 700;
 }
 .Toastify__toast--success {
   background: #d3fcb6;
   border: 2px solid green;
   border-radius: 25px;
   color: black;
+  font-weight: 700;
+}
+.Toastify__toast--info {
+  background: #7bd2f2;
+  border: 2px solid rgb(0, 66, 128);
+  border-radius: 25px;
+  color: black;
+  font-weight: 700;
 }
