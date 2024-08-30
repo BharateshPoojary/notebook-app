@@ -25,6 +25,7 @@ const Navbar = () => {
             alert('Please login to our platform', 'info')
         }
     }
+
     return (
         <div className='container'>
             <nav>
@@ -33,7 +34,10 @@ const Navbar = () => {
                 <div className='navitems'>
                     <NavLink className={` ${location.pathname === "/" ? 'onnavlinkclick' : 'navlinks'}`} onClick={handleUser} to='/'>Home</NavLink>
                     {localStorage.getItem('auth-token') ?
-                        <NavLink className='navlinks' onClick={handleLogout}>Logout</NavLink>
+                        <>
+                            <NavLink className='navlinks' onClick={handleLogout}>Logout</NavLink>
+                            <NavLink className={` ${location.pathname === "/Profile" ? 'onnavlinkclick' : 'navlinks'}`} to='/Profile'><i className="ri-profile-line" ></i>Profile</NavLink>
+                        </>
                         : <><NavLink className={` ${location.pathname === "/Signup" ? 'onnavlinkclick' : 'navlinks'}`} to='/Signup'>Signup</NavLink>
                             <NavLink className={` ${location.pathname === "/Signin" ? 'onnavlinkclick' : 'navlinks'}`} to='/Signin'>Signin</NavLink></>
                     }
