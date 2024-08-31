@@ -1,16 +1,31 @@
-import React, { useContext, useEffect } from 'react'
-import NoteContext from '../context/notes/NoteContext'
+import React, { useEffect, useState } from 'react'
+import './Profile.css'
+// import NoteContext from '../context/notes/NoteContext'
 const Profile = () => {
-    const notecontext = useContext(NoteContext);
-    const { handleProfile } = notecontext;
+    // const notecontext = useContext(NoteContext);
+    // const { handleProfile } = notecontext;
+    const [username, setUsername] = useState('');
+    const [useremail, setUseremail] = useState('');
     useEffect(() => {
-        const response = handleProfile();
-        console.log(response.name);
+        const handleProfile = async () => {
+            const response = await fetch('http://localhost:5000/api/auth/getuser', {
+                method: 'POST',
+                headers: {
+                    'auth-token': localStorage.getItem('auth-token')
+                }
+            })
+            const jsonprofileresponse = await response.json();
+            setUsername(jsonprofileresponse.name);
+            setUseremail(jsonprofileresponse.email);
 
+        }
+        handleProfile();
     }, [])
     return (
-        <div>
-            {/* <p>User Name : {response.name}</p> */}
+        <div className='profilecontainer'>
+            <h3>User Profile</h3>
+            <p>User Name : {username}</p>
+            <p>Email: {useremail}</p>
         </div>
     )
 }

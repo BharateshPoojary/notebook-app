@@ -93,23 +93,14 @@ const NoteState = (props) => {//getting the props sent to it
         }
 
     }
-    const handleProfile = async () => {
-        const response = await fetch('http://localhost:5000/api/auth/getuser', {
-            method: 'POST',
-            headers: {
-                'auth-token': localStorage.getItem('auth-token')
-            }
-        })
-        const jsonprofileresponse = await response.json();
-        return jsonprofileresponse;
-    }
+
     //Notification
     const alert = (message, type) => {
         toast(message, { type: type });
     }
     return (
         <>
-            <NoteContext.Provider value={{ notes, addNote, deleteNote, getNotes, updateNote, alert, handleProfile }}>{/**here we are sending  notes array ,CRUD functions  as prop to the NoteContext so that it could be accessed by all components which are wrapped inside NoteState component   */}
+            <NoteContext.Provider value={{ notes, addNote, deleteNote, getNotes, updateNote, alert }}>{/**here we are sending  notes array ,CRUD functions  as prop to the NoteContext so that it could be accessed by all components which are wrapped inside NoteState component   */}
                 {props.children}{/**here props.children means components which are wrapped inside NoteState component are indirectly passed as prop to the NoteState Component */}
             </NoteContext.Provider>
             < ToastContainer bodyClassName='toastBody' position="top-center" theme="dark" />
