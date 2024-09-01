@@ -47,3 +47,8 @@ input:focus {
 .etextarea {
   outline: none;
 }
+@media (max-width: 600px) {
+  .notecontainer {
+    font-size: 2vw;
+  }
+}

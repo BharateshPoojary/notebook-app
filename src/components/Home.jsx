@@ -21,7 +21,7 @@ const Home = () => {
     return (
         <div>
             <div className="homecontainer">
-                <h2>Add a Note</h2>
+                <h2 className='addnote'>Add a Note</h2>
                 <form>
                     <label className='notelabel' htmlFor="title">Enter title for note:</label>
                     <br />
