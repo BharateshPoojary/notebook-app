@@ -10,14 +10,13 @@ const Home = () => {
     const { alert } = notecontext;
     const handleLogin = async (e) => {
         e.preventDefault();
-        // console.log(email, password);
         const loginresponse = await fetch('http://localhost:5000/api/auth/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password })
         })
         const jsonresponse = await loginresponse.json();
-        console.log(jsonresponse);
+
         if (jsonresponse.success) {
             localStorage.setItem('auth-token', jsonresponse.auth_token);
             navigate('/');

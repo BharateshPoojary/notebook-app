@@ -19,7 +19,6 @@ const About = () => {
                 body: JSON.stringify({ name, email, password })
             })
             const jsonresponse = await signupresponse.json();
-            console.log(jsonresponse);
             if (jsonresponse.success) {
                 localStorage.setItem('auth-token', jsonresponse.authtoken);
                 alert("Account created successfully", 'success');

@@ -19,13 +19,11 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 0 3vw;
-  /* border-bottom: 3px solid black; */
 }
 .navitems {
   display: flex;
   align-items: center;
   gap: 5vw;
-  /* transform: translateX(100%); */
 }
 .hidenavitem {
   display: flex;

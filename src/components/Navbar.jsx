@@ -14,9 +14,6 @@ const Navbar = () => {
     // }, []);
 
     const location = useLocation();//Returns the current location object, which represents the current URL in web browsers.
-    // useEffect(() => {
-    //     console.log(location.pathname);
-    // }, [location])
     const handleLogout = () => {
         localStorage.removeItem('auth-token');
         navigate('/Signin');
@@ -43,7 +40,6 @@ const Navbar = () => {
         <>
             <div className='container'>
                 <nav>
-                    {/* <h2>hi {a.state.name} and {a.state.class}</h2>* 'a'  holds the context value which is sent in our case it is state object it can be accessed */}
                     <h3>Bharat Note </h3>
                     <div className={nav ? 'navitems' : 'hidenavitem'}>
                         <NavLink className={` ${location.pathname === "/" ? 'onnavlinkclick' : 'navlinks'}`} onClick={handleUser} to='/'>Home</NavLink>

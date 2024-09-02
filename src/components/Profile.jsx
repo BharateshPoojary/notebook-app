@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './Profile.css'
-// import NoteContext from '../context/notes/NoteContext'
 const Profile = () => {
-    // const notecontext = useContext(NoteContext);
-    // const { handleProfile } = notecontext;
     const [username, setUsername] = useState('');
     const [useremail, setUseremail] = useState('');
     useEffect(() => {
