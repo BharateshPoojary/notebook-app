@@ -4,7 +4,7 @@ import NoteContext from '../context/notes/NoteContext'
 
 import './Navbar.css'
 const Navbar = () => {
-    const navigate = useNavigate;
+    const navigate = useNavigate();
     const noteContext = useContext(NoteContext);
     const { alert } = noteContext;
     const [nav, setNav] = useState(false);
@@ -20,7 +20,7 @@ const Navbar = () => {
     const handleLogout = () => {
         localStorage.removeItem('auth-token');
         navigate('/Signin');
-        nav ? setNav(false) : setNav(true);
+
         if (nav) {
             setNav(false);
         }

@@ -4,7 +4,9 @@
   box-sizing: border-box;
   font-family: "Helvetica";
 }
-
+.signinwelcome {
+  font-size: 3vw;
+}
 .signincontainer {
   display: flex;
   flex-direction: column;
@@ -22,6 +24,7 @@
   border: 1px solid black;
   width: 35vw;
   height: 3vw;
+  font-size: 2vw;
 }
 
 .loginlabel {
@@ -37,4 +40,36 @@
   border-radius: 30px;
   margin-left: 10vw;
   cursor: pointer;
+}
+@media (max-width: 600px) {
+  .logininput {
+    width: 45vw;
+    height: 4.3vw;
+    font-size: 2.8vw;
+  }
+  .loginlabel {
+    font-size: 3vw;
+  }
+  .signinbtn {
+    font-size: 3vw;
+  }
+  .signinwelcome {
+    font-size: 4vw;
+  }
+}
+@media (max-width: 340px) {
+  .logininput {
+    width: 45vw;
+    height: 4.5vw;
+    font-size: 3.5vw;
+  }
+  .loginlabel {
+    font-size: 3.5vw;
+  }
+  .signinbtn {
+    font-size: 3.4vw;
+  }
+  .signinwelcome {
+    font-size: 4.5vw;
+  }
 }

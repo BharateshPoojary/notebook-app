@@ -3,3 +3,8 @@
   /* line-height: 4vh; */
   font-size: 3vw;
 }
+@media (max-width: 600px) {
+  .profilecontainer {
+    font-size: 4vw;
+  }
+}

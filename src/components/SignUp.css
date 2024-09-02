@@ -13,14 +13,17 @@
   height: calc(100%-100px);
   width: 100%;
 }
-
+.signupwelcome {
+  font-size: 3vw;
+}
 .signupform {
   margin-top: 10px;
 }
 .signupinput {
   border: 1px solid black;
   width: 35vw;
-  height: 2vw;
+  height: 3vw;
+  font-size: 2vw;
 }
 
 .signuplabel {
@@ -36,6 +39,37 @@
   background-color: black;
   color: white;
   border-radius: 30px;
-
   cursor: pointer;
+}
+@media (max-width: 600px) {
+  .signupinput {
+    width: 45vw;
+    height: 4.3vw;
+    font-size: 2.8vw;
+  }
+  .signuplabel {
+    font-size: 3.2vw;
+  }
+  .signupbtn {
+    font-size: 3vw;
+  }
+  .signupwelcome {
+    font-size: 4vw;
+  }
+}
+@media (max-width: 340px) {
+  .signupinput {
+    width: 48vw;
+    height: 5vw;
+    font-size: 3.2vw;
+  }
+  .signuplabel {
+    font-size: 3.8vw;
+  }
+  .signupbtn {
+    font-size: 3.4vw;
+  }
+  .signupwelcome {
+    font-size: 4.5vw;
+  }
 }

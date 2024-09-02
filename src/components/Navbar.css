@@ -33,7 +33,7 @@ nav {
   gap: 5vw;
 }
 .navlinks {
-  font-size: 1.6vw;
+  font-size: 2vw;
   text-decoration: none;
   color: black;
   padding: 0.5vw 1.5vw;
@@ -43,7 +43,7 @@ nav {
   display: none;
 }
 .onnavlinkclick {
-  font-size: 1.6vw;
+  font-size: 2vw;
   text-decoration: none;
   background-color: black;
   padding: 0.5vw 1.5vw;
@@ -85,9 +85,19 @@ nav {
     position: absolute;
     gap: 4vw;
     top: 140%; /*as our containing block i.e. navbar is 100px height 140% of 100px is 140px because of which it will come out of navcontainer  */
-    left: 140%;
+    left: 40%;
     z-index: 2;
-    transition: left 0.6s ease-in-out;
+    animation: hidenav 0.3s forwards;
+  }
+
+  @keyframes hidenav {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      visibility: hidden;
+      transform: translateX(100%);
+    }
   }
 
   .ri-profile-line {

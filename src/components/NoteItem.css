@@ -13,6 +13,7 @@
 }
 .editdelbtn {
   display: flex;
+  margin-left: 1px;
   gap: 1vw;
 }
 i {
@@ -23,7 +24,7 @@ button {
   background-color: black;
   color: white;
   padding: 0.7vw 1vw;
-  font-size: 1vw;
+  font-size: 1.7vw;
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -33,22 +34,53 @@ button {
   display: flex;
   justify-content: space-evenly;
 }
-input {
-  border: none;
-  font-size: 1.4vw;
-}
-input:focus {
-  outline: none;
-}
+
 .etextarea {
   border: none;
-  font-size: 1.4vw;
-}
-.etextarea {
+  font-size: 1.7vw;
   outline: none;
 }
+.etexttitlearea {
+  border: none;
+  font-size: 1.8vw;
+  outline: none;
+}
+
 @media (max-width: 600px) {
   .notecontainer {
     font-size: 2vw;
+  }
+  i {
+    font-size: 3vw;
+  }
+
+  .etexttitlearea {
+    font-size: 2.8vw;
+  }
+  .etextarea {
+    font-size: 2.5vw;
+  }
+  button {
+    font-size: 2vw;
+    padding: 1vw 1.5vw;
+  }
+}
+@media (max-width: 340px) {
+  .notecontainer {
+    font-size: 3vw;
+  }
+  i {
+    font-size: 4.5vw;
+  }
+
+  .etexttitlearea {
+    font-size: 3.5vw;
+  }
+  .etextarea {
+    font-size: 3.2vw;
+  }
+  button {
+    font-size: 3vw;
+    padding: 1.5vw 2.5vw;
   }
 }

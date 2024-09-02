@@ -1,9 +1,9 @@
 import React from 'react'
-
+import './About.css'
 const About = () => {
     return (
         <div>
-            <p style={{ fontSize: '3vw' }}>Welcome to Bharat Note app where  you can write your notes anytime and any where</p>
+            <p className='about'>Welcome to Bharat Note app where  you can write your notes anytime and any where</p>
         </div>
     )
 }
