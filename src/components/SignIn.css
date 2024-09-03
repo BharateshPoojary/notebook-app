@@ -59,17 +59,18 @@
 }
 @media (max-width: 340px) {
   .logininput {
-    width: 45vw;
-    height: 4.5vw;
+    width: 75vw;
+    height: 10vw;
     font-size: 3.5vw;
   }
   .loginlabel {
-    font-size: 3.5vw;
+    font-size: 5vw;
   }
   .signinbtn {
-    font-size: 3.4vw;
+    font-size: 4vw;
+    margin-left: 40px;
   }
   .signinwelcome {
-    font-size: 4.5vw;
+    font-size: 5vw;
   }
 }

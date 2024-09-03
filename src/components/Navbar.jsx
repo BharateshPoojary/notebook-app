@@ -1,10 +1,10 @@
 import React, { useContext, useState } from 'react'
-import { NavLink, useLocation, useNavigate } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import NoteContext from '../context/notes/NoteContext'
 
 import './Navbar.css'
 const Navbar = () => {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const noteContext = useContext(NoteContext);
     const { alert } = noteContext;
     const [nav, setNav] = useState(false);
@@ -15,13 +15,9 @@ const Navbar = () => {
 
     const location = useLocation();//Returns the current location object, which represents the current URL in web browsers.
     const handleLogout = () => {
-        localStorage.removeItem('auth-token');
-        navigate('/Signin');
-
         if (nav) {
             setNav(false);
         }
-
     }
     const handleUser = () => {
         if (!localStorage.getItem('auth-token')) {
@@ -45,13 +41,19 @@ const Navbar = () => {
                         <NavLink className={` ${location.pathname === "/" ? 'onnavlinkclick' : 'navlinks'}`} onClick={handleUser} to='/'>Home</NavLink>
                         {localStorage.getItem('auth-token') ?
                             <>
-                                <NavLink className='navlinks' onClick={handleLogout}>Logout</NavLink>
-                                <NavLink onClick={() => { if (nav) { setNav(false) } }} className={` ${location.pathname === "/Profile" ? 'onnavlinkclick' : 'navlinks'}`} to='/Profile'><i className="ri-profile-line" ></i>Profile</NavLink>
+                                <NavLink className='navlinks' onClick={handleLogout} to='/Logout'>Logout</NavLink>
+                                <NavLink onClick={() => {
+
+                                    if (nav) { setNav(false) }
+                                }} className={` ${location.pathname === "/Profile" ? 'onnavlinkclick' : 'navlinks'}`} to='/Profile'><i className="ri-profile-line" ></i>Profile</NavLink>
                             </>
                             : <><NavLink onClick={() => { if (nav) { setNav(false) } }} className={` ${location.pathname === "/Signup" ? 'onnavlinkclick' : 'navlinks'}`} to='/Signup'>Signup</NavLink>
                                 <NavLink onClick={() => { if (nav) { setNav(false) } }} className={` ${location.pathname === "/Signin" ? 'onnavlinkclick' : 'navlinks'}`} to='/Signin'>Signin</NavLink></>
                         }
-                        <NavLink onClick={() => { if (nav) { setNav(false) } }} className={` ${location.pathname === "/About" ? 'onnavlinkclick' : 'navlinks'}`} to='/About'>About</NavLink>
+                        <NavLink onClick={() => {
+
+                            if (nav) { setNav(false) }
+                        }} className={` ${location.pathname === "/About" ? 'onnavlinkclick' : 'navlinks'}`} to='/About'>About</NavLink>
                     </div>
                     <i onClick={handleNav} className="ri-menu-3-fill"></i>
 

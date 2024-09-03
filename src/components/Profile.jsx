@@ -1,22 +1,28 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import './Profile.css'
 const Profile = () => {
+    const navigate = useNavigate();
     const [username, setUsername] = useState('');
     const [useremail, setUseremail] = useState('');
     useEffect(() => {
-        const handleProfile = async () => {
-            const response = await fetch('http://localhost:5000/api/auth/getuser', {
-                method: 'POST',
-                headers: {
-                    'auth-token': localStorage.getItem('auth-token')
-                }
-            })
-            const jsonprofileresponse = await response.json();
-            setUsername(jsonprofileresponse.name);
-            setUseremail(jsonprofileresponse.email);
+        if (localStorage.getItem('auth-token')) {
+            const handleProfile = async () => {
+                const response = await fetch('http://localhost:5000/api/auth/getuser', {
+                    method: 'POST',
+                    headers: {
+                        'auth-token': localStorage.getItem('auth-token')
+                    }
+                })
+                const jsonprofileresponse = await response.json();
+                setUsername(jsonprofileresponse.name);
+                setUseremail(jsonprofileresponse.email);
 
+            }
+            handleProfile();
+        } else {
+            navigate('/Signin')
         }
-        handleProfile();
     }, [])
     return (
         <div className='profilecontainer'>

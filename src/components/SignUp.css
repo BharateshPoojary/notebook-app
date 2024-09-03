@@ -59,9 +59,9 @@
 }
 @media (max-width: 340px) {
   .signupinput {
-    width: 48vw;
-    height: 5vw;
-    font-size: 3.2vw;
+    width: 75vw;
+    height: 10vw;
+    font-size: 3.5vw;
   }
   .signuplabel {
     font-size: 3.8vw;

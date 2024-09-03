@@ -4,19 +4,21 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './NoteState.css'
 const NoteState = (props) => {//getting the props sent to it
-    const host = "http://localhost:5000/"
+
+
     const arrofnotes = [];
     const [notes, setNotes] = useState(arrofnotes);
+    const getnotesurl = import.meta.env.VITE_GET_NOTES_URL;
     const getNotes = async () => {
         //GET Notes From database
-        const getresponse = await fetch(`${host}api/notes/fetchallnotes`, {
+        const getresponse = await fetch(getnotesurl, {
             method: 'GET',
             headers: {
                 'auth-token': localStorage.getItem('auth-token')
             }
         })
         const jsonresponse = await getresponse.json();
-        console.log(jsonresponse);
+
         if (jsonresponse.error) {
             alert(jsonresponse.error, 'error')
         } else {
@@ -25,9 +27,10 @@ const NoteState = (props) => {//getting the props sent to it
 
     }
     // Adding a note 
+    const addnotesurl = import.meta.env.VITE_ADD_NOTES_URL;
     const addNote = async (title, description) => {//addNote() function for adding the note
-        console.log(localStorage.getItem('auth-token'));
-        const addresponse = await fetch(`${host}api/notes/addnotes`, {
+
+        const addresponse = await fetch(addnotesurl, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -36,7 +39,7 @@ const NoteState = (props) => {//getting the props sent to it
             body: JSON.stringify({ title, description })
         })
         const jsonresponse = await addresponse.json();
-        console.log(jsonresponse);
+
         if (jsonresponse.errors) {
             const { errors } = jsonresponse;
             errors.forEach(error => {
@@ -52,8 +55,9 @@ const NoteState = (props) => {//getting the props sent to it
         }
     }
     // Updating a note 
+    const updatenotesurl = import.meta.env.VITE_UPDATE_NOTES_URL;
     const updateNote = async (noteId, title, description) => {
-        const updateresponse = await fetch(`${host}api/notes/updatenotes/${noteId}`, {
+        const updateresponse = await fetch(updatenotesurl + noteId, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -63,7 +67,7 @@ const NoteState = (props) => {//getting the props sent to it
             body: JSON.stringify({ title, description })
         })
         const jsonresponse = await updateresponse.json();
-        console.log(jsonresponse);
+
         if (jsonresponse.error) {
             alert(jsonresponse.error, 'error')
         } else {
@@ -71,16 +75,15 @@ const NoteState = (props) => {//getting the props sent to it
         }
     }
     //Deleting a note
+    const deletenotesurl = import.meta.env.VITE_DELETE_NOTES_URL;
     const deleteNote = async (noteId) => {
-        console.log(noteId);
-        const deleteresponse = await fetch(`${host}api/notes/deletenotes/${noteId}`, {
+        const deleteresponse = await fetch(deletenotesurl + noteId, {
             method: 'DELETE',
             headers: {
                 'auth-token': localStorage.getItem('auth-token')
             }
         });
         const jsonresponse = await deleteresponse.json();
-        console.log(jsonresponse);
 
         const afterDeletenotearr = notes.filter((note) => {
             return note._id !== noteId

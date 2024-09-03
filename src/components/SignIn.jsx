@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import noteContext from '../context/notes/NoteContext'
 import './SignIn.css'
@@ -26,6 +26,11 @@ const Home = () => {
         }
 
     }
+    useEffect(() => {
+        if (localStorage.getItem('auth-token')) {
+            navigate('/');
+        }
+    }, [])
 
     return (
         <div className='signincontainer'>
