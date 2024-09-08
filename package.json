@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "both": "concurrently \"npm run dev\" \"nodemon ../notebook_app_backend/index.js\""
+    "both": "concurrently \"npm run dev\" \"nodemon ../notebook_app_backend/functions/index.js\""
   },
   "dependencies": {
     "concurrently": "^8.2.2",
