@@ -36,6 +36,9 @@ const About = () => {
             alert("Password mismatched", 'error');
         }
     }
+    const handleSignin = () => {
+        navigate('/Signin')
+    }
     return (
         <div>
             <div className='container'>
@@ -62,6 +65,9 @@ const About = () => {
                     <br />
 
                     <input className='signupbtn' type="submit" value="SignUp" />
+                    <div className='signinredirectcontainer'>
+                        <p className='signin'>Already have an account?</p> <p className='signinnavigate' onClick={handleSignin}>SignIn</p>
+                    </div>
                 </form>
             </div>
         </div>

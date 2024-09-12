@@ -27,6 +27,9 @@ const Home = () => {
         }
 
     }
+    const handleSignup = () => {
+        navigate('/Signup')
+    }
     useEffect(() => {
         if (localStorage.getItem('auth-token')) {
             navigate('/');
@@ -46,9 +49,13 @@ const Home = () => {
                 <br />
                 <input className='logininput' type="password" value={password} onChange={(e) => { setPassword(e.target.value) }} required />
                 <br />
+
                 <input className='signinbtn' type="submit" value="SignIn" />
+
             </form>
-            Don't have an account?
+            <div className='signupcontainer'>
+                <p className='signup'>Don't have an account?</p> <p className='signupnavigate' onClick={handleSignup}>SignUp</p>
+            </div>
         </div>
     )
 }

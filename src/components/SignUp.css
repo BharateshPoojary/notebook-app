@@ -25,15 +25,28 @@
   height: 3vw;
   font-size: 2vw;
 }
-
+.signin {
+  font-size: 2vw;
+}
+.signinnavigate {
+  font-size: 2vw;
+  font-weight: 700;
+  cursor: pointer;
+}
+.signinredirectcontainer {
+  display: flex;
+  margin-top: 10px;
+  align-items: center;
+  justify-content: center;
+}
 .signuplabel {
   font-size: 1.5vw;
 }
 .signupbtn {
   margin-top: 2vw;
-  margin-left: 10vw;
-  margin-left: 20;
-  padding: 0.5vw 2vw;
+
+  margin-left: 11vw;
+  padding: 1.5vw 2vw;
   font-size: 2vw;
   width: 40%;
   background-color: black;
@@ -42,6 +55,12 @@
   cursor: pointer;
 }
 @media (max-width: 600px) {
+  .signin {
+    font-size: 3.5vw;
+  }
+  .signinnavigate {
+    font-size: 3.5vw;
+  }
   .signupinput {
     width: 45vw;
     height: 4.3vw;
@@ -51,6 +70,7 @@
     font-size: 3.2vw;
   }
   .signupbtn {
+    margin-left: 14vw;
     font-size: 3vw;
   }
   .signupwelcome {
@@ -58,6 +78,12 @@
   }
 }
 @media (max-width: 340px) {
+  .signin {
+    font-size: 4.5vw;
+  }
+  .signinnavigate {
+    font-size: 4.5vw;
+  }
   .signupinput {
     width: 75vw;
     height: 10vw;
@@ -67,6 +93,7 @@
     font-size: 3.8vw;
   }
   .signupbtn {
+    margin-left: 25vw;
     font-size: 3.4vw;
   }
   .signupwelcome {
