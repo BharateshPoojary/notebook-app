@@ -5,10 +5,12 @@ const Profile = () => {
     const navigate = useNavigate();
     const [username, setUsername] = useState('');
     const [useremail, setUseremail] = useState('');
+
     useEffect(() => {
         if (localStorage.getItem('auth-token')) {
+            const profileurl = import.meta.env.VITE_PROFILE_URL;
             const handleProfile = async () => {
-                const response = await fetch('http://localhost:5000/api/auth/getuser', {
+                const response = await fetch(profileurl, {
                     method: 'POST',
                     headers: {
                         'auth-token': localStorage.getItem('auth-token')

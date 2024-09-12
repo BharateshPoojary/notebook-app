@@ -10,7 +10,8 @@ const Home = () => {
     const { alert } = notecontext;
     const handleLogin = async (e) => {
         e.preventDefault();
-        const loginresponse = await fetch('http://localhost:5000/api/auth/login', {
+        const signinurl = import.meta.env.VITE_SIGNIN_URL;
+        const loginresponse = await fetch(signinurl, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password })

@@ -13,7 +13,8 @@ const About = () => {
     const handleSignup = async (e) => {
         e.preventDefault();
         if (password === cpassword) {
-            const signupresponse = await fetch('http://localhost:5000/api/auth/createuser', {
+            const signupurl = import.meta.env.VITE_SIGNUP_URL;
+            const signupresponse = await fetch(signupurl, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name, email, password })
