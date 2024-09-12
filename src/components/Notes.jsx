@@ -11,7 +11,7 @@ const Notes = () => {
         if (localStorage.getItem('auth-token')) {
             getNotes();
         } else {
-            navigate('https://bharat-note-app.netlify.app/Signin');
+            navigate('/Signin');
         }
     }, [])
     return (
