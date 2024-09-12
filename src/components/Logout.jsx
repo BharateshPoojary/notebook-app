@@ -4,7 +4,7 @@ const Logout = () => {
     const navigate = useNavigate();
     useEffect(() => {
         localStorage.removeItem('auth-token');
-        navigate('/Signin');// 'replace' ensures no back navigation
+        navigate('https://bharat-note-app.netlify.app/Signin');// 'replace' ensures no back navigation
     }, [])
     return (
         <div>

@@ -20,7 +20,7 @@ const Home = () => {
 
         if (jsonresponse.success) {
             localStorage.setItem('auth-token', jsonresponse.auth_token);
-            navigate('/');
+            navigate('https://bharat-note-app.netlify.app/');
             alert("Logged in  successfully", 'success');
         } else {
             alert(jsonresponse.error, 'error')
@@ -29,7 +29,7 @@ const Home = () => {
     }
     useEffect(() => {
         if (localStorage.getItem('auth-token')) {
-            navigate('/');
+            navigate('https://bharat-note-app.netlify.app/');
         }
     }, [])
 
@@ -48,6 +48,7 @@ const Home = () => {
                 <br />
                 <input className='signinbtn' type="submit" value="SignIn" />
             </form>
+            Don't have an account?
         </div>
     )
 }

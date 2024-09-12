@@ -23,7 +23,7 @@ const About = () => {
             if (jsonresponse.success) {
                 localStorage.setItem('auth-token', jsonresponse.authtoken);
                 alert("Account created successfully", 'success');
-                navigate('/');
+                navigate('https://bharat-note-app.netlify.app/');
             } else if (jsonresponse.error) {
                 alert(jsonresponse.error, 'error')
             } else {

@@ -23,7 +23,7 @@ const Profile = () => {
             }
             handleProfile();
         } else {
-            navigate('/Signin')
+            navigate('https://bharat-note-app.netlify.app/Signin')
         }
     }, [])
     return (
