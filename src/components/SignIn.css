@@ -88,14 +88,14 @@
   }
   .logininput {
     width: 75vw;
-    height: 10vw;
-    font-size: 3.5vw;
+    height: 13vw;
+    font-size: 5vw;
   }
   .loginlabel {
     font-size: 5vw;
   }
   .signinbtn {
-    font-size: 4vw;
+    font-size: 5vw;
     margin-left: 24vw;
   }
   .signinwelcome {
