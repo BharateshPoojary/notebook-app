@@ -1,9 +1,9 @@
 .notecontainer {
   border-radius: 10px;
-  margin: 0.5vw 0.5vw;
+  margin: 1px 3px;
   border: 2px solid #dadada;
-  padding: 0.5vw 1vw;
-  font-size: 1.4vw;
+  padding: 0.5vw 0.5vw;
+  font-size: 1.7vw;
   font-weight: 100;
 }
 .titlecontainer {
@@ -16,15 +16,24 @@
   margin-left: 1px;
   gap: 1vw;
 }
+.title {
+  word-wrap: break-word;
+  width: 65%;
+  margin-bottom: 5px;
+}
+.description {
+  word-wrap: break-word;
+  width: 65%;
+}
 i {
-  font-size: 2vw;
+  font-size: 2.5vw;
   cursor: pointer;
 }
 button {
   background-color: black;
   color: white;
   padding: 0.7vw 1vw;
-  font-size: 1.7vw;
+  font-size: 2.7vw;
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -37,50 +46,50 @@ button {
 
 .etextarea {
   border: none;
-  font-size: 1.7vw;
+  font-size: 2.5vw;
   outline: none;
 }
 .etexttitlearea {
   border: none;
-  font-size: 1.8vw;
+  font-size: 2.5vw;
   outline: none;
 }
 
 @media (max-width: 600px) {
   .notecontainer {
-    font-size: 2vw;
+    font-size: 3.6vw;
   }
   i {
-    font-size: 3vw;
+    font-size: 5vw;
   }
 
   .etexttitlearea {
-    font-size: 2.8vw;
+    font-size: 3.8vw;
   }
   .etextarea {
-    font-size: 2.5vw;
+    font-size: 3.5vw;
   }
   button {
-    font-size: 2vw;
-    padding: 1vw 1.5vw;
+    font-size: 4vw;
+    padding: 1.3vw 2vw;
   }
 }
 @media (max-width: 340px) {
   .notecontainer {
-    font-size: 3vw;
+    font-size: 5vw;
   }
   i {
-    font-size: 4.5vw;
+    font-size: 6vw;
   }
 
   .etexttitlearea {
-    font-size: 3.5vw;
+    font-size: 5vw;
   }
   .etextarea {
-    font-size: 3.2vw;
+    font-size: 5vw;
   }
   button {
-    font-size: 3vw;
-    padding: 1.5vw 2.5vw;
+    font-size: 4vw;
+    padding: 2.5vw 2.5vw;
   }
 }

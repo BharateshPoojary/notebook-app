@@ -13,13 +13,13 @@ const NoteItem = (props) => {
     return (
         <div className='notecontainer'>
             <div className="titlecontainer">
-                {showform ? <textarea className='etexttitlearea' type='text' value={utitle} onChange={(e) => { setUtitle(e.target.value) }} /> : <h3>{utitle}</h3>}
+                {showform ? <textarea className='etexttitlearea' type='text' value={utitle} onChange={(e) => { setUtitle(e.target.value) }} /> : <h3 className='title'>{utitle}</h3>}
                 {showform || <div className='editdelbtn'>
                     <i className="ri-delete-bin-line" onClick={() => { deleteNote(note._id) }}></i>
                     <i className="ri-edit-2-line" onClick={() => { setShowform(true) }}></i>
                 </div>}
             </div>
-            {showform ? <textarea className='etextarea' type='text' value={udesc} onChange={(e) => { setUdesc(e.target.value) }} /> : <p>{udesc} </p>
+            {showform ? <textarea className='etextarea' type='text' value={udesc} onChange={(e) => { setUdesc(e.target.value) }} /> : <p className='description'>{udesc} </p>
             }
             {showform &&
                 <div className="btncontainer">

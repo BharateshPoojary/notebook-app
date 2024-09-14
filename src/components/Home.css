@@ -13,26 +13,24 @@
   font-size: 2vw;
 }
 .notelabel {
-  margin-top: 1vw;
-  font-size: 1.6vw;
+  font-size: 2.1vw;
 }
 .noteinput {
-  height: 5vh;
+  height: 3vw;
   width: 85%;
-  font-size: 1.4vw;
+  font-size: 1.7vw;
   margin-bottom: 1.5vw;
 }
 
 .desc {
   height: 10vh;
-  width: 85%;
-  font-size: 1.3vw;
+  width: 100%;
+  font-size: 1.7vw;
 }
 .submitbtn {
-  font-size: 1.4vw;
-  margin-top: 1vw;
-  width: 7vw;
-  height: 3vw;
+  font-size: 1.6vw;
+  margin-top: 3px;
+  padding: 1vw 1vw;
   background-color: black;
   color: white;
   border: none;
@@ -42,24 +40,23 @@
 }
 @media (max-width: 600px) {
   .homecontainer h2 {
-    font-size: 3.5vw;
+    font-size: 3.7vw;
   }
   .notelabel {
-    font-size: 2.5vw;
+    font-size: 3.4vw;
   }
   .noteinput {
     height: 4vh;
     width: 85%;
-    font-size: 2.8vw;
+    font-size: 3vw;
     margin-bottom: 1.5vw;
   }
   .desc {
-    font-size: 2.6vw;
+    font-size: 3vw;
   }
   .submitbtn {
-    font-size: 1.8vw;
-    width: 15vw;
-    height: 5.5vw;
+    font-size: 2.9vw;
+    padding: 1.5vw 1.5vw;
     margin-bottom: 10px;
   }
 }
@@ -68,21 +65,19 @@
     font-size: 4.5vw;
   }
   .notelabel {
-    font-size: 3.5vw;
+    font-size: 4vw;
   }
   .noteinput {
     height: 4vh;
     width: 85%;
-    font-size: 3.5vw;
+    font-size: 4.5vw;
     margin-bottom: 1.5vw;
   }
   .desc {
-    font-size: 3.3vw;
+    font-size: 4.5vw;
   }
   .submitbtn {
-    font-size: 2.8vw;
-    width: 17vw;
-    height: 5.5vw;
-    margin-bottom: 10px;
+    font-size: 3.6vw;
+    padding: 1.5vw 2vw;
   }
 }
