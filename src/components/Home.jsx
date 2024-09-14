@@ -25,7 +25,7 @@ const Home = () => {
                 <form>
                     <label className='notelabel' htmlFor="title">Enter title for note:</label>
                     <br />
-                    <input className='noteinput' style={{ border: '1px solid black' }} maxlength="20" type="text" name="title" value={note.title} onChange={handleChange} required />
+                    <input className='noteinput' style={{ border: '1px solid black' }} type="text" name="title" value={note.title} onChange={handleChange} required />
                     <br />
                     <label className='notelabel'>Enter description for note:</label>
                     <br />
