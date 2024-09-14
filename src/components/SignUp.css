@@ -55,25 +55,25 @@
 }
 @media (max-width: 600px) {
   .signin {
-    font-size: 3.5vw;
+    font-size: 5vw;
   }
   .signinnavigate {
-    font-size: 3.5vw;
+    font-size: 5vw;
   }
   .signupinput {
-    width: 45vw;
-    height: 4.3vw;
-    font-size: 2.8vw;
+    width: 75vw;
+    height: 8vw;
+    font-size: 4.5vw;
   }
   .signuplabel {
-    font-size: 3.2vw;
+    font-size: 5vw;
   }
   .signupbtn {
-    margin-left: 14vw;
-    font-size: 3vw;
+    margin-left: 22vw;
+    font-size: 5vw;
   }
   .signupwelcome {
-    font-size: 4vw;
+    font-size: 6vw;
   }
 }
 @media (max-width: 340px) {
