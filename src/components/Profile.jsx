@@ -27,7 +27,8 @@ const Profile = () => {
                 navigate('/Signin')
             }
         }
-    }, [])
+        fetchProfile();
+    }, [navigate])
 
     return (
         <div className='profilecontainer'>
