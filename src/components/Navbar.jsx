@@ -1,10 +1,10 @@
 import React, { useContext, useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import NoteContext from '../context/notes/NoteContext'
-
+import { useNavigate } from 'react-router-dom';
 import './Navbar.css'
 const Navbar = () => {
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
     const noteContext = useContext(NoteContext);
     const { alert } = noteContext;
     const [nav, setNav] = useState(false);
@@ -15,6 +15,8 @@ const Navbar = () => {
 
     const location = useLocation();//Returns the current location object, which represents the current URL in web browsers.
     const handleLogout = () => {
+        localStorage.removeItem('auth-token');
+        navigate('/Signin');// 'replace' ensures no back navigation
         if (nav) {
             setNav(false);
         }
@@ -41,7 +43,7 @@ const Navbar = () => {
                         <NavLink className={` ${location.pathname === "/" ? 'onnavlinkclick' : 'navlinks'}`} onClick={handleUser} to='/'>Home</NavLink>
                         {localStorage.getItem('auth-token') ?
                             <>
-                                <NavLink className='navlinks' onClick={handleLogout} to='/Logout'>Logout</NavLink>
+                                <button className='navlinks' onClick={handleLogout} to='/Logout'>Logout</button>
                                 <NavLink onClick={() => {
 
                                     if (nav) { setNav(false) }
