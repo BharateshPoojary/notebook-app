@@ -11,7 +11,7 @@ import Home from './components/Home.jsx'
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <App />,//parent component
     children: [
       {
         path: "/",
@@ -44,5 +44,6 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider router={router} />
+    {/* giving navigation functionality to entire app */}
   </StrictMode>
 )

@@ -85,11 +85,11 @@ const NoteState = (props) => {//getting the props sent to it
         });
         const jsonresponse = await deleteresponse.json();
 
-        const afterDeletenotearr = notes.filter((note) => {
-            return note._id !== noteId
-        })
-        setNotes(afterDeletenotearr);
         if (jsonresponse.success) {
+            const afterDeletenotearr = notes.filter((note) => {
+                return note._id !== noteId
+            })
+            setNotes(afterDeletenotearr);
             alert("Note deleted successfully", 'success')
         } else {
             alert(jsonresponse.error, 'error')
@@ -103,6 +103,7 @@ const NoteState = (props) => {//getting the props sent to it
     }
     return (
         <>
+            {/* Providing the context to the entire application  */}
             <NoteContext.Provider value={{ notes, addNote, deleteNote, getNotes, updateNote, alert }}>{/**here we are sending  notes array ,CRUD functions  as prop to the NoteContext so that it could be accessed by all components which are wrapped inside NoteState component   */}
                 {props.children}{/**here props.children means components which are wrapped inside NoteState component are indirectly passed as prop to the NoteState Component */}
             </NoteContext.Provider>
