@@ -8,7 +8,7 @@ const About = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [cpassword, setCpassword] = useState("");
-    const notecontext = useContext(noteContext);
+    const notecontext = useContext(noteContext);//accepts the current context as argument and returns the context value
     const { alert } = notecontext;
     const handleSignup = async (e) => {
         e.preventDefault();
@@ -21,7 +21,7 @@ const About = () => {
             })
             const jsonresponse = await signupresponse.json();
             if (jsonresponse.success) {
-                localStorage.setItem('auth-token', jsonresponse.authtoken);
+                localStorage.setItem('auth-token', jsonresponse.authtoken);//getting token from db and storing it in local storage
                 alert("Account created successfully", 'success');
                 navigate('/');
             } else if (jsonresponse.error) {
