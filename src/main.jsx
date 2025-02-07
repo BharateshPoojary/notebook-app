@@ -13,11 +13,11 @@ const router = createBrowserRouter([
     element: <App />,//parent component
     children: [
       {
-        path: "/",
+        path: "/Home",
         element: <Home />
       },
       {
-        path: "/Signin",
+        path: "/",
         element: <SignIn />
       },
       {

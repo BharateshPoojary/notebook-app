@@ -21,7 +21,7 @@ const Home = () => {
 
         if (jsonresponse.success) {
             localStorage.setItem('auth-token', jsonresponse.auth_token);
-            navigate('/');
+            navigate('/Home');
             alert("Logged in  successfully", 'success');
         } else {
             alert(jsonresponse.error, 'error')
@@ -34,10 +34,14 @@ const Home = () => {
         navigate('/Signup')
     }
     useEffect(() => {
+
         if (localStorage.getItem('auth-token')) {
-            navigate('/');
+            navigate('/Home');
         }
-    }, [])
+    }, [navigate])
+
+
+
 
     return (
         <div className='signincontainer'>

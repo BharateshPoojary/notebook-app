@@ -2,11 +2,13 @@ import React, { useContext, useState } from 'react'
 import './Home.css'
 import Notes from './Notes.jsx';
 import noteContext from '../context/notes/NoteContext.jsx';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+    const navigate = useNavigate();
     const NoteContext = useContext(noteContext);//Using the context for accessing CRUD FUNCTION
     const [note, setNote] = useState({ title: "", description: "" });//using the state to manage notes initially it will be empty
-    const { addNote } = NoteContext;//accessing the addnote function from NoteContext
+    const { alert, addNote } = NoteContext;//accessing the addnote function from NoteContext
     const handleChange = (e) => {//e object includes the specific information related to input and textarea tag
         setNote({ ...note, [e.target.name]: e.target.value });
         //(NOT USED HERE)The spread operator ... is used to create a copy of the current note state. This ensures that all existing properties in the note object are preserved.
@@ -17,6 +19,11 @@ const Home = () => {
         e.preventDefault();
         addNote(note.title, note.description);/*Sending the new note to addnote function where it will be added to the  notes array*/
         setNote({ title: "", description: "" });
+    }
+    if (!localStorage.getItem('auth-token')) {
+        navigate('/');
+        alert("Please login to our platform", 'info')
+
     }
     return (
         <div>

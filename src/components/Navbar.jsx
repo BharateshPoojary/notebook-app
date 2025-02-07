@@ -16,7 +16,7 @@ const Navbar = () => {
     const location = useLocation();//Returns the current location object, which represents the current URL in web browsers.
     const handleLogout = () => {
         localStorage.removeItem('auth-token');
-        navigate('/Signin');// 'replace' ensures no back navigation
+        navigate('/');// 'replace' ensures no back navigation
         if (nav) {
             setNav(false);
         }
@@ -42,7 +42,7 @@ const Navbar = () => {
                     <div className={nav ? 'navitems' : 'hidenavitem'}>
                         {localStorage.getItem('auth-token') ?
                             <>
-                                <NavLink className={` ${location.pathname === "/" ? 'onnavlinkclick' : 'navlinks'}`} onClick={handleUser} to='/'>Home</NavLink>
+                                <NavLink className={` ${location.pathname === "/Home" ? 'onnavlinkclick' : 'navlinks'}`} onClick={handleUser} to='/Home'>Home</NavLink>
                                 <button className="button" onClick={handleLogout} >Logout</button>
                                 <NavLink onClick={() => {
 
@@ -50,7 +50,7 @@ const Navbar = () => {
                                 }} className={` ${location.pathname === "/Profile" ? 'onnavlinkclick' : 'navlinks'}`} to='/Profile'><i className="ri-profile-line" ></i>Profile</NavLink>
                             </>
                             : <><NavLink onClick={() => { if (nav) { setNav(false) } }} className={` ${location.pathname === "/Signup" ? 'onnavlinkclick' : 'navlinks'}`} to='/Signup'>Signup</NavLink>
-                                <NavLink onClick={() => { if (nav) { setNav(false) } }} className={` ${location.pathname === "/Signin" ? 'onnavlinkclick' : 'navlinks'}`} to='/Signin'>Signin</NavLink></>
+                                <NavLink onClick={() => { if (nav) { setNav(false) } }} className={` ${location.pathname === "/" ? 'onnavlinkclick' : 'navlinks'}`} to='/'>Signin</NavLink></>
                         }
                         <NavLink onClick={() => {
 

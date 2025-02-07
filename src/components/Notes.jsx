@@ -11,7 +11,7 @@ const Notes = () => {
     if (localStorage.getItem('auth-token')) {
         getNotes();
     } else {
-        navigate('/Signin');
+        navigate('/');
     }
 
     return (

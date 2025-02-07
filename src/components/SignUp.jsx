@@ -23,7 +23,7 @@ const About = () => {
             if (jsonresponse.success) {
                 localStorage.setItem('auth-token', jsonresponse.authtoken);//getting token from db and storing it in local storage
                 alert("Account created successfully", 'success');
-                navigate('/');
+                navigate('/Home');
             } else if (jsonresponse.error) {
                 alert(jsonresponse.error, 'error')
             } else {
@@ -37,7 +37,7 @@ const About = () => {
         }
     }
     const handleSignin = () => {
-        navigate('/Signin')
+        navigate('/')
     }
     return (
         <div>
