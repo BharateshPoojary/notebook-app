@@ -7,13 +7,13 @@ const Notes = () => {
     const navigate = useNavigate();
     const notecontext = useContext(NoteContext);
     const { notes, getNotes } = notecontext;//Accessing the notes array from NoteContext.jsx
-    useEffect(() => {
-        if (localStorage.getItem('auth-token')) {
-            getNotes();
-        } else {
-            navigate('/Signin');
-        }
-    }, [])
+
+    if (localStorage.getItem('auth-token')) {
+        getNotes();
+    } else {
+        navigate('/Signin');
+    }
+
     return (
         <div>
             {
