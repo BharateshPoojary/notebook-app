@@ -6,24 +6,26 @@ const Profile = () => {
     const [username, setUsername] = useState('');
     const [useremail, setUseremail] = useState('');
 
-    useEffect(async () => {
+    useEffect(() => {
+        const fetchProfile = async () => {
 
-        if (localStorage.getItem('auth-token')) {
-            const profileurl = import.meta.env.VITE_PROFILE_URL;
+            if (localStorage.getItem('auth-token')) {
+                const profileurl = import.meta.env.VITE_PROFILE_URL;
 
-            const response = await fetch(profileurl, {
-                method: 'POST',
-                headers: {
-                    'auth-token': localStorage.getItem('auth-token')
-                }
-            })
-            const jsonprofileresponse = await response.json();
-            setUsername(jsonprofileresponse.name);
-            setUseremail(jsonprofileresponse.email);
+                const response = await fetch(profileurl, {
+                    method: 'POST',
+                    headers: {
+                        'auth-token': localStorage.getItem('auth-token')
+                    }
+                })
+                const jsonprofileresponse = await response.json();
+                setUsername(jsonprofileresponse.name);
+                setUseremail(jsonprofileresponse.email);
 
 
-        } else {
-            navigate('/Signin')
+            } else {
+                navigate('/Signin')
+            }
         }
     }, [])
 
