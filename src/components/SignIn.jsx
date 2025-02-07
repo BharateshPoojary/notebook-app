@@ -8,6 +8,7 @@ const Home = () => {
     const [password, setPassword] = useState("");
     const notecontext = useContext(noteContext);
     const { alert } = notecontext;
+
     const handleLogin = async (e) => {
         e.preventDefault();
         const signinurl = import.meta.env.VITE_SIGNIN_URL;
@@ -27,6 +28,8 @@ const Home = () => {
         }
 
     }
+
+
     const handleSignup = () => {
         navigate('/Signup')
     }

@@ -40,10 +40,10 @@ const Navbar = () => {
                 <nav>
                     <h3>Bharat Note </h3>
                     <div className={nav ? 'navitems' : 'hidenavitem'}>
-                        <NavLink className={` ${location.pathname === "/" ? 'onnavlinkclick' : 'navlinks'}`} onClick={handleUser} to='/'>Home</NavLink>
                         {localStorage.getItem('auth-token') ?
                             <>
-                                <button className='navlinks' onClick={handleLogout} >Logout</button>
+                                <NavLink className={` ${location.pathname === "/" ? 'onnavlinkclick' : 'navlinks'}`} onClick={handleUser} to='/'>Home</NavLink>
+                                <button className="button" onClick={handleLogout} >Logout</button>
                                 <NavLink onClick={() => {
 
                                     if (nav) { setNav(false) }
