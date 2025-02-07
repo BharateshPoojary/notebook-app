@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import './Profile.css'
-const Profile = () => {
+const Profile = async () => {
     const navigate = useNavigate();
     const [username, setUsername] = useState('');
     const [useremail, setUseremail] = useState('');
@@ -9,19 +9,18 @@ const Profile = () => {
 
     if (localStorage.getItem('auth-token')) {
         const profileurl = import.meta.env.VITE_PROFILE_URL;
-        const handleProfile = async () => {
-            const response = await fetch(profileurl, {
-                method: 'POST',
-                headers: {
-                    'auth-token': localStorage.getItem('auth-token')
-                }
-            })
-            const jsonprofileresponse = await response.json();
-            setUsername(jsonprofileresponse.name);
-            setUseremail(jsonprofileresponse.email);
 
-        }
-        handleProfile();
+        const response = await fetch(profileurl, {
+            method: 'POST',
+            headers: {
+                'auth-token': localStorage.getItem('auth-token')
+            }
+        })
+        const jsonprofileresponse = await response.json();
+        setUsername(jsonprofileresponse.name);
+        setUseremail(jsonprofileresponse.email);
+
+
     } else {
         navigate('/Signin')
     }
