@@ -43,7 +43,8 @@ const Navbar = () => {
                         {localStorage.getItem('auth-token') ?
                             <>
                                 <NavLink className={` ${location.pathname === "/Home" ? 'onnavlinkclick' : 'navlinks'}`} onClick={handleUser} to='/Home'>Home</NavLink>
-                                <button className="button" onClick={handleLogout} >Logout</button>
+                                <NavLink className="navlinks
+                                " onClick={handleLogout} >Logout</NavLink>
                                 <NavLink onClick={() => {
 
                                     if (nav) { setNav(false) }

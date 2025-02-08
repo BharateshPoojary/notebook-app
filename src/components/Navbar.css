@@ -36,13 +36,7 @@ nav {
   color: black;
   padding: 0.5vw 1.5vw;
 }
-.button {
-  font-size: 2vw;
-  text-decoration: none;
-  background-color: white;
-  color: black;
-  padding: 0.5vw 1.5vw;
-}
+
 .ri-menu-3-fill {
   display: none;
 }
